@@ -9,7 +9,14 @@ interface IndexPageProps {
 		  		name: string;
 		  		tagline: string;
 			}
-	  	}
+		}
+		allContentfulProjects: {
+			edges: {
+			  	node: {
+					title: string;
+			  	}
+			}
+		}   
 	}
 }
 
@@ -20,7 +27,14 @@ export const indexPageQuery = graphql`
         		name
         		tagline
       		}
-    	}
+		}
+		allContentfulProjects {
+			edges {
+			  	node {
+					title
+			  	}
+			}
+		}
   	}
 `
   
@@ -31,11 +45,19 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 			name,
 			tagline
 		} = this.props.data.site.siteMetadata
+
+		const projects = this.props.data.allContentfulProjects.edges.map((edge) => edge.node)
 		  
 		return (
 			<div className={styles.Container}>
 		  		<h1>{name}</h1>
 		  		<p>{tagline}</p>
+
+				<ul>
+          			{projects.map((project, index) => {
+            			return <li key={index}>{project.title}</li>
+          			})}
+        		</ul>
 			</div>
 	  	)
 	}
