@@ -1,14 +1,15 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/layout/layout'
 
 export default ({ data }) => {
 	const project = data.contentfulProjects
   	return (
-		<div>
+		<Layout>
 			<Link to="/">Home</Link> 
 			<div>{project.title}</div>
 			<div>{project.company}</div>
-		</div>
+		</Layout>
   	)
 }
 

@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 import { Link, graphql } from 'gatsby'
-import * as styles from './Index.module.scss'
+import Layout from '../components/layout/layout'
 
 interface IndexPageProps {
 	data: {
@@ -51,7 +51,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 		const projects = this.props.data.allContentfulProjects.edges.map((edge) => edge.node)
 		  
 		return (
-			<div className={styles.siteContainer}>
+			<Layout>
 		  		<h1>{name}</h1>
 		  		<p>{tagline}</p>
 
@@ -64,7 +64,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 								</li>
           			})}
         		</ul>
-			</div>
+			</Layout>
 	  	)
 	}
 }
