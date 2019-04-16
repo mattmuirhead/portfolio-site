@@ -2,7 +2,7 @@ require(`dotenv`).config({path: `.env`,})
 
 module.exports = {
 	siteMetadata: {
-	  	name: `Hello Typescript World!`,
+	  	name: `digital`,
 	  	tagline: `Gatsby + SASS + Typescript = 💪`
 	},  
 	plugins: [

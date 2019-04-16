@@ -49,7 +49,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 		const projects = this.props.data.allContentfulProjects.edges.map((edge) => edge.node)
 		  
 		return (
-			<div className={styles.Container}>
+			<div className={styles.siteContainer}>
 		  		<h1>{name}</h1>
 		  		<p>{tagline}</p>
 
