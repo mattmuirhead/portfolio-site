@@ -23,12 +23,6 @@ interface IndexPageProps {
 
 export const indexPageQuery = graphql`
   	query IndexPageQuery {
-    	site {
-      		siteMetadata {
-        		name
-				tagline
-      		}
-		}
 		allContentfulProjects {
 			edges {
 			  	node {
@@ -43,18 +37,10 @@ export const indexPageQuery = graphql`
 export default class IndexPage extends React.Component<IndexPageProps, {}> {
 	public render() {
 
-		const {
-			name,
-			tagline
-		} = this.props.data.site.siteMetadata
-
 		const projects = this.props.data.allContentfulProjects.edges.map((edge) => edge.node)
 		  
 		return (
 			<Layout>
-		  		<h1>{name}</h1>
-		  		<p>{tagline}</p>
-
 				<ul>
           			{projects.map((project, index) => {
 						return <li key={index}>

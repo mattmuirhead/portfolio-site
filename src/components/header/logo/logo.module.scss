@@ -1,0 +1,54 @@
+.logoWrapper {
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+    text-decoration: none;
+
+    .logo {
+        width: 40px;
+        height: auto;
+
+        svg {
+            isolation: isolate;
+
+            .line {
+                opacity: 1;
+                transition: all ease-in-out .3s;
+            }
+        }
+    }
+
+    .type {
+        font-size: 14px;
+        align-self: center;
+        border-left: 1px solid;
+        margin-left: 20px;
+        padding: 1px 15px;
+        color: black;
+    }
+
+    &:hover {
+        svg {
+            .path {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: dash 5s ease-in-out infinite backwards;
+                animation-delay: 1s;
+            }
+            
+            .line {
+                opacity: 0;
+                transition: all ease-in-out .3s;
+                transition-delay: 1s;
+            }
+            
+            @keyframes dash {
+                0% { stroke-dashoffset: 0; }
+                25% { stroke-dashoffset: 1000; }
+                50% { stroke-dashoffset: 1000; }
+                75% { stroke-dashoffset: 0; }
+                100% { stroke-dashoffset: 0; }
+            }
+        }
+    }
+}
