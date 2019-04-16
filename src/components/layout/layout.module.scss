@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300');
 
-.siteContainer {
-    width: 100%;
-    padding: 80px 20px 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    letter-spacing: .02em;
+body {
+  margin: 0;
 
     * {
       box-sizing: border-box;
     }
+}
+
+.siteContainer {
+    width: 100%;
+    padding: 150px 60px 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.2px;
     
     h1, h2, h3, h4 {
       font-family: 'Montserrat', sans-serif;
