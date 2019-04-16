@@ -1,10 +1,16 @@
+@import '../../../globals';
+
 .headerWrapper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 50px 60px;
+    padding: 50px 30px;
     display: flex;
     justify-content: space-between;
     align-content: center;
+
+    @include break('tablet-l') {
+        padding: 50px 60px;
+    }
 }

@@ -1,11 +1,17 @@
+@import '../../../globals';
+
 .scrollerWrapper {
     position: fixed;
     bottom: 100px;
-    right: 32px;
+    right: 2px;
     padding: 0 0 0 20px;
     pointer-events: none;
     transform: rotate(90deg);
     font-size: 14px;
+
+    @include break('tablet-l') {
+        right: 32px;
+    }
 
     .line {
         width: 50px;
