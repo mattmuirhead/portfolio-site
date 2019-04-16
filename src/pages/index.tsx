@@ -1,12 +1,13 @@
 import React from "react"
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import * as styles from './Index.module.scss'
 
 interface IndexPageProps {
 	data: {
 	  	site: {
 			siteMetadata: {
-		  		name: string;
+				name: string;
+				slug: string;
 		  		tagline: string;
 			}
 		}
@@ -25,13 +26,14 @@ export const indexPageQuery = graphql`
     	site {
       		siteMetadata {
         		name
-        		tagline
+				tagline
       		}
 		}
 		allContentfulProjects {
 			edges {
 			  	node {
 					title
+					slug
 			  	}
 			}
 		}
@@ -55,7 +57,11 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
 				<ul>
           			{projects.map((project, index) => {
-            			return <li key={index}>{project.title}</li>
+						return <li key={index}>
+									<Link to={`/project/${project.slug}`}>
+										{project.title}
+									</Link>
+								</li>
           			})}
         		</ul>
 			</div>
