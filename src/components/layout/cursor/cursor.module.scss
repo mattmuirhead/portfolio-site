@@ -1,0 +1,25 @@
+.cursorSmall {
+    width: 5px;
+    height: 5px;
+    left: -2.5px;
+    top: -2.5px;
+    border-radius: 50%;
+    z-index: 11000;
+    background: black;
+    position: fixed;
+    pointer-events: none;
+
+    &::before {
+        content: '';
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border: 1px solid;
+        border-radius: 100%;
+        opacity: .2;
+    }
+}
+  

@@ -2,10 +2,12 @@
 @import '../../globals';
 
 body {
+  min-height: 100vh;
   margin: 0;
-
-    * {
-      box-sizing: border-box;
+  cursor: none;
+  
+  * {
+    box-sizing: border-box;
     }
 }
 

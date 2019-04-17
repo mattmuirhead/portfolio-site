@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from './logo/logo'
+import Menu from './menu/menu'
 
 import * as styles from './header.module.scss'
 
@@ -9,7 +10,7 @@ export default () => (
             <Logo/>
         </div>
         <div>
-            Menu
+            <Menu />
         </div>
     </div>
 )
