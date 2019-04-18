@@ -38,6 +38,7 @@
         &:before,
         &:after {
             top: 19.5px;
+            background-color: $alt;
             transition: top ease-in-out .3s, transform ease-in-out .3s .3s;
         }
 

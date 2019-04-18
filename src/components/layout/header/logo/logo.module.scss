@@ -29,6 +29,33 @@
         color: $main;
     }
 
+    .masks {
+        stroke: $alt;
+    }
+
+    .path,
+    .line {
+        stroke: $main;
+    }
+
+    &.alt {
+        .masks {
+            stroke: $main;
+            transition: all ease-in .3s .2s;
+        }
+    
+        .path,
+        .line {
+            stroke: $alt;
+            transition: all ease-in .3s .2s;
+        }
+
+        .type {
+            color: $alt;
+            transition: all ease-in .3s .2s;
+        }
+    }
+
     &:hover {
         svg {
             .path {

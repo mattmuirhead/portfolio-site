@@ -8,7 +8,7 @@ body:hover {
         top: -2.5px;
         border-radius: 50%;
         z-index: 11000;
-        background: $main;
+        background: $highlight;
         position: fixed;
         pointer-events: none;
 
@@ -20,7 +20,7 @@ body:hover {
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%) scale(0);
-            border: 1px solid;
+            border: 1px solid $main;
             border-radius: 100%;
             opacity: .2;
             animation: scale-in ease-in-out .3s forwards;
