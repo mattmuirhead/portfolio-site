@@ -4,7 +4,10 @@
 body {
   min-height: 100vh;
   margin: 0;
-  cursor: none;
+
+  @media (hover: hover) {
+    cursor: none;
+  }
   
   * {
     box-sizing: border-box;

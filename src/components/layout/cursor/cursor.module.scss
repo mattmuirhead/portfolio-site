@@ -8,9 +8,14 @@ body:hover {
         top: -2.5px;
         border-radius: 50%;
         z-index: 11000;
-        background: $highlight;
+        background: $main;
         position: fixed;
         pointer-events: none;
+        display: none;
+
+        @media (hover: hover) {
+            display: block;
+        }
 
         &::before {
             content: '';
