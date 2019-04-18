@@ -24,7 +24,7 @@ export default class Menu extends Component {
             <div>
                 <div 
                     onClick={this.handleClick} 
-                    className={`${styles.menuBtn} ${this.state.menu && styles.active}`} 
+                    className={`${styles.menuBtn} ${this.state.menu && styles.active} link`} 
                     />
             </div>
         );

@@ -6,7 +6,7 @@ import * as styles from './logo.module.scss'
 export default () => (
     <Link 
         to="/"
-        className={styles.logoWrapper}>
+        className={`${styles.logoWrapper} link`}>
         <div className={styles.logo}>
             <svg viewBox="0 0 257 307">
                 <g>
