@@ -1,3 +1,5 @@
+@import '../../../globals';
+
 body:hover {
     .cursorSmall {
         width: 5px;
@@ -6,7 +8,7 @@ body:hover {
         top: -2.5px;
         border-radius: 50%;
         z-index: 11000;
-        background: black;
+        background: $main;
         position: fixed;
         pointer-events: none;
 
@@ -34,7 +36,7 @@ body:hover {
             &::before {
                 height: 80px;
                 width: 80px;
-                background-color: black;
+                background-color: $main;
                 opacity: .1;
                 transition: all ease-in-out .3s;
             }
