@@ -9,10 +9,99 @@
     background: $main;
     color: $alt;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    transition: all ease-in-out .3s;
+    transition: all .75s cubic-bezier(.63,.03,.21,1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 35px;
+
+    @include break('tablet-l') {
+        padding: 0 65px;
+    }
 
     &.open {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(35% 0, 100% 0, 100% 100%, 5% 100%);
         transition: all ease-in-out .3s;
+
+        @include break('tablet-l') {
+            clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+        }
+    }
+
+    .menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: right;
+        position: relative;
+
+        li {
+            position: relative;
+
+            a, .echo {
+                color: $alt;
+                text-decoration: none;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                letter-spacing: -.01em;
+                font-size: 45px;
+                margin-bottom: 10px;
+                display: block;
+                transition: all .75s cubic-bezier(.63,.03,.21,1);
+                cursor: pointer;
+
+                @include break('tablet-l') {
+                    font-size: 75px;
+                }
+            }
+
+            a {
+                position: relative;
+                z-index: 2;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            .echo {
+                color: darken($alt, 50%);
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 1;
+            }
+
+            .number {
+                position: absolute;
+                color: $highlight;
+                top: 55%;
+                right: 0;
+                transform: translateY(-50%) translateX(10px);
+                opacity: 0;
+                transition: all .75s cubic-bezier(.63,.03,.21,1);
+            }
+
+            &:hover {
+
+                a, .echo {
+                    transform: translateX(-50px);
+                    transition-delay: .3s;
+                }
+
+                .number {
+                    opacity: 1;
+                    transform: translateY(-50%) translateX(0);
+                    transition-delay: .5s;
+                }
+
+                a {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+            }
+        }
+
+        &:hover {
+            a {
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            }
+        }
     }
 }

@@ -27,13 +27,13 @@ export default class Header extends React.Component {
             <div>
                 <div className={styles.headerWrapper}>
                     <div>
-                        <Logo menu={this.state.menu}/>
+                        <Logo/>
                     </div>
                     <div>
+                        <Menu menu={this.state.menu} />
                         <MenuBtn handleClick={this.handleClick.bind(this)}  menu={this.state.menu} />
                     </div>
                 </div>
-                <Menu menu={this.state.menu} />
             </div>
         );
     }
