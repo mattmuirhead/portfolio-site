@@ -26,6 +26,23 @@
         @include break('tablet-l') {
             clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
         }
+
+        .menu li {
+            transform: translateX(0);
+            opacity: 1;
+
+            &:nth-of-type(1) {
+                transition-delay: .2s;
+            }
+
+            &:nth-of-type(2) {
+                transition-delay: .4s;
+            }
+
+            &:nth-of-type(3) {
+                transition-delay: .6s;
+            }
+        }
     }
 
     .menu {
@@ -37,6 +54,9 @@
 
         li {
             position: relative;
+            transform: translateX(40px);
+            opacity: 0;
+            transition: all .75s ease-in-out;
 
             a, .echo {
                 color: $alt;
