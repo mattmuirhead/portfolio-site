@@ -4,6 +4,7 @@
     width: 100vw;
     height: calc(100vh - 110px);
     position: relative;
+    overflow: hidden;
 
     .tilt {
         position: absolute;
@@ -13,9 +14,11 @@
         bottom: 0;
         display: flex;
         align-items: flex-start;
-        padding-top: 30px;
+        padding-top: 20vh;
+        transform-style: preserve-3d;
 
         @include break('tablet-l') {
+            padding-top: 0;
             align-items: flex-end;
             padding-bottom: 20vh;
         }
@@ -23,7 +26,10 @@
     
     .slideInner {
         max-width: 1200px;
-        padding: 0 30px;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        transform: translateZ(20px);
 
         @include break('tablet-l') {
             padding: 0 60px;
@@ -35,6 +41,10 @@
             letter-spacing: 1.2px;
             font-size: 12px;
             margin: 0;
+            color: $alt;
+            background: rgba($main, .9);
+            padding: 5px 25px;
+            display: inline-block;
 
             @include break('tablet-l') {
                 font-size: 14px;
@@ -44,6 +54,9 @@
         h2 {
             font-size: 50px;
             margin: 0;
+            color: $alt;
+            background: rgba($main, .9);
+            padding: 0 25px 7px;
 
             @include break('tablet-l') {
                 font-size: 75px;
@@ -55,40 +68,15 @@
             font-size: 16px;
             color: $main;
             text-decoration: none;
-            margin-top: 40px;
+            color: $alt;
+            background: rgba($main, .9);
+            padding: 5px 25px 10px;
             
             @include break('tablet-l') {
                 float: right;
                 font-size: 18px;
-            }
-
-            &:after {
-                content: '';
-                display: block;
-                width: 100%;
-                height: 2px;
-                margin-top: 4px;
-                background-color: $main;
-                animation: scroll 8s cubic-bezier(0.43, 0.15, 0, 0.99) infinite forwards;
-            }
-
-            @keyframes scroll {
-                0% {
-                    transform: scale(1);
-                    transform-origin: right 50% 0px;
-                }
-                15% {
-                    transform: scale(0);
-                    transform-origin: right 50% 0px;
-                }
-                18% {
-                    transform: scale(0);
-                    transform-origin: left 50% 0px;
-                }
-                33% {
-                    transform: scale(1);
-                    transform-origin: left 50% 0px;
-                }
+                padding: 5px 25px;
+                margin-top: 10px;
             }
         }
     }
