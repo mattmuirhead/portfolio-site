@@ -19,9 +19,9 @@ export default class Logo extends React.Component {
                         </g>
                     </svg>
                 </div>
-                <div className={styles.type}>
+                <h1 className={styles.type}>
                     Front End Developer
-                </div>
+                </h1>
             </Link>
         );
     }
