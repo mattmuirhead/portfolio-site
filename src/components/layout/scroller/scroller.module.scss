@@ -8,10 +8,12 @@
     pointer-events: none;
     transform: rotate(90deg);
     font-size: 14px;
+    display: none;
 
     @include break('tablet-l') {
         bottom: 100px;
         right: 29px;
+        display: block;
     }
 
     .line {

@@ -51,13 +51,14 @@
         }
 
         a {
-            float: right;
+            float: left;
             font-size: 16px;
             color: $main;
             text-decoration: none;
             margin-top: 40px;
-
+            
             @include break('tablet-l') {
+                float: right;
                 font-size: 18px;
             }
 
