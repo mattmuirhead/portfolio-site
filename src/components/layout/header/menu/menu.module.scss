@@ -1,9 +1,10 @@
 @import '../../../../globals';
 
 .menuWrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     height: 100vh;
     width: 100vw;
     background: $main;
@@ -14,35 +15,10 @@
     justify-content: flex-end;
     align-items: center;
     padding: 0 35px;
+    overflow: hidden;
 
     @include break('tablet-l') {
         padding: 0 65px;
-    }
-
-    &.open {
-        clip-path: polygon(35% 0, 100% 0, 100% 100%, 5% 100%);
-        transition: all ease-in-out .3s;
-
-        @include break('tablet-l') {
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
-        }
-
-        .menu li {
-            transform: translateX(0);
-            opacity: 1;
-
-            &:nth-of-type(1) {
-                transition-delay: .2s;
-            }
-
-            &:nth-of-type(2) {
-                transition-delay: .4s;
-            }
-
-            &:nth-of-type(3) {
-                transition-delay: .6s;
-            }
-        }
     }
 
     .menu {
@@ -54,9 +30,6 @@
 
         li {
             position: relative;
-            transform: translateX(40px);
-            opacity: 0;
-            transition: all .75s ease-in-out;
 
             a, .echo {
                 color: $alt;
@@ -122,6 +95,15 @@
             a {
                 clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
             }
+        }
+    }
+
+    &.open {
+        clip-path: polygon(35% 0, 100% 0, 100% 100%, 5% 100%);
+        transition: all .75s cubic-bezier(.63,.03,.21,1);
+
+        @include break('tablet-l') {
+            clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
         }
     }
 }

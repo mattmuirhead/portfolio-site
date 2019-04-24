@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Logo from './../logo/logo'
 
 import * as styles from './menu.module.scss'
 
@@ -8,8 +7,6 @@ export default class Menu extends React.Component {
     render() {
         return (
             <div className={`${styles.menuWrapper} ${this.props.menu && styles.open}`}>
-
-                <Logo menu={true}/>
             
                 <ul className={styles.menu}>
                     <li>

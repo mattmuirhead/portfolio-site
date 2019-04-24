@@ -1,10 +1,10 @@
 @import '../../../globals';
 
 .headerWrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     padding: 30px;
     display: flex;
     justify-content: space-between;
