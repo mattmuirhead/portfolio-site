@@ -7,12 +7,17 @@
     right: 0;
     bottom: 0;
     padding-top: 110px;
+    overflow: hidden;
 
     @include break('tablet-l') {
         padding-top: 150px;
     }
     
-    .flickity:focus {
-        outline: none;
+    .flickity {
+        overflow: hidden;
+        
+        &:focus {
+            outline: none;
+        }
     }
 }

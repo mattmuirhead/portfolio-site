@@ -1,5 +1,6 @@
 import React from 'react'
 import Flickity from 'react-flickity-component';
+import Swipe from 'react-easy-swipe';
 import Slide from './SlideLayout/SlideLayout';
 import { Debounce } from 'react-throttle';
 
@@ -16,6 +17,16 @@ export default class Slider extends React.Component {
             this.flkty.next();
         }
     };
+
+    onSwipeLeft() {
+        console.log('swipe left');
+        this.flkty.next();
+    }
+
+    onSwipeRight() {
+        console.log('swipe right');
+        this.flkty.previous();
+    }
     
     render() {
         const flickityOptions = {
@@ -26,9 +37,11 @@ export default class Slider extends React.Component {
 
         return (
             <Debounce time="100" handler="onWheel">
-                <div 
+                <Swipe 
                     className={styles.slider}
                     onWheel={this.handleScroll.bind(this)}
+                    onSwipeLeft={this.onSwipeLeft.bind(this)}
+                    onSwipeRight={this.onSwipeRight.bind(this)}
                     >
                     <Flickity 
                         flickityRef={c => this.flkty = c}
@@ -55,7 +68,7 @@ export default class Slider extends React.Component {
                             linkText="View Project"
                             link="/" />
                     </Flickity>
-                </div>
+                </Swipe>
             </Debounce>
         );
     }
