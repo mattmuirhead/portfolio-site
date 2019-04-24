@@ -8,10 +8,10 @@ import * as styles from './layout.module.scss'
 export default ({ children, hasScroll }) => (
     <div className={styles.siteContainer}>
         <Header />
-        <Cursor />
 
         {children}
 
         {hasScroll && <Scroller />}
+        <Cursor />
     </div>
 )

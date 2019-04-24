@@ -22,6 +22,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-flickity-component": "^3.2.0",
+    "react-throttle": "^0.3.0",
+    "react-tilt": "^0.1.4",
     "typescript": "^3.4.3"
   },
   "devDependencies": {

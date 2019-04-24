@@ -1,5 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300|Material+Icons');
 @import '../../globals';
+
+html, 
+body {
+	height: 100%;
+	overflow: hidden;
+}
 
 body {
   	min-height: 100vh;
@@ -20,19 +26,25 @@ body {
 }
 
 .siteContainer {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
     width: 100%;
     padding: 150px 30px 20px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-		letter-spacing: 1.2px;
+	letter-spacing: 1.2px;
 	
 	@include break('tablet-l') {
 		padding: 150px 60px 20px;
 	}
     
     h1, h2, h3, h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      letter-spacing: -.01em;
+      	font-family: 'Montserrat', sans-serif;
+      	font-weight: 700;
+      	letter-spacing: -.01em;
     }
 }
