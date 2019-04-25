@@ -54,19 +54,19 @@ export default class Slider extends React.Component {
                             title="Some cool quote goes here"
                             subTitle="Small title"
                             linkText="View Project"
-                            link="/" />
+                            link="/project/marketforce-live" />
 
                         <Slide 
                             title="British Horseracing Authority"
                             subTitle="Wordpress Build"
                             linkText="View Project"
-                            link="/" />
+                            link="/project/marketforce-live" />
                         
                         <Slide 
                             title="My Amazon Jobs"
                             subTitle="Craft CMS Build"
                             linkText="View Project"
-                            link="/" />
+                            link="/project/marketforce-live" />
                     </Flickity>
                 </Swipe>
             </Debounce>

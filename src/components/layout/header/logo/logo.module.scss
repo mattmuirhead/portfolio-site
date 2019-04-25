@@ -10,6 +10,10 @@
         width: 35px;
         height: auto;
 
+        @include break('tablet-l') {
+            width: 45px;
+        }
+
         svg {
             isolation: isolate;
 
@@ -47,7 +51,7 @@
         left: 30px;
 
         @include break('tablet-l') {
-            top: 50px;
+            top: 46px;
             left: 60px;
         }
 
