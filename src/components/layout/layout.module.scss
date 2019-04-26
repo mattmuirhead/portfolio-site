@@ -22,6 +22,10 @@ body {
 			background: $main;
 			color: $alt;
 		}
+
+		&::-webkit-scrollbar { 
+			display: none; 
+		}
     }
 }
 
@@ -33,13 +37,13 @@ body {
     right: 0;
     overflow: auto;
     width: 100%;
-    padding: 150px 30px 20px;
+    padding: 110px 0 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 	letter-spacing: 1.2px;
 	
 	@include break('tablet-l') {
-		padding: 150px 60px 20px;
+		padding: 150px 0 0;
 	}
     
     h1, h2, h3, h4 {

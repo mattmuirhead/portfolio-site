@@ -1,29 +1,25 @@
 @import '../../../globals';
 
 .slide {
-    width: 100vw;
-    height: calc(100vh - 110px);
+    width: 100%;
+    min-height: calc(100vh - 110px);
     position: relative;
     overflow: hidden;
     background-image: url('http://www.inforrm.com/gallery/interesting-benefits-of-betting-on-horse-racing-picutre/Interesting-benefits-of-betting-on-horse-racing.jpg');
     background-position: center;
     background-size: cover;
+    display: flex;
 
     .tilt {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
         display: flex;
         align-items: flex-start;
-        padding-top: 20vh;
+        padding: 20vh 0;
         transform-style: preserve-3d;
+        width: 100%;
 
         @include break('tablet-l') {
-            padding-top: 0;
             align-items: flex-end;
-            padding-bottom: 20vh;
+            padding: 20vh 0 calc(20vh - 40px);
         }
     }
     
@@ -82,5 +78,33 @@
                 margin-top: 10px;
             }
         }
+    }
+
+    &.projectHeader {
+        animation: morph .75s ease-in-out forwards;
+
+        .tilt {
+            animation: collapse .75s ease-in-out forwards;
+
+            @include break('tablet-l') {
+                animation: none;
+            }
+        }
+
+        a {
+            animation: opacity .75s ease-in-out forwards;
+        }
+    }
+
+    @keyframes collapse {
+        to { padding: 30px 0 10px; }
+    }
+
+    @keyframes morph {
+        to { min-height: 0px; }
+    }
+
+    @keyframes opacity {
+        to { opacity: 0; }
     }
 }
