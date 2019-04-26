@@ -41,6 +41,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 	letter-spacing: 1.2px;
+	-webkit-overflow-scrolling: touch;
 	
 	@include break('tablet-l') {
 		padding: 150px 0 0;
