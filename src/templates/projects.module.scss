@@ -1,0 +1,20 @@
+@import '../globals';
+
+.articleWrapper {
+    width: 100%;
+    max-width: 1260px;
+    padding: 50px 30px;
+    margin: 0 auto;
+
+    @include break('tablet-l') {
+        padding: 50px 60px;
+    }
+
+    .content {
+        margin-bottom: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
