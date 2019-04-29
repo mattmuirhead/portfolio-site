@@ -5,6 +5,7 @@
     max-width: 1260px;
     padding: 50px 30px;
     margin: 0 auto;
+    text-align: center;
 
     @include break('tablet-l') {
         padding: 50px 60px;
@@ -12,9 +13,44 @@
 
     .content {
         margin-bottom: 50px;
+        text-align: left;
 
         img {
             width: 100%;
         }
+    }
+
+    .projectMeta {
+        margin-bottom: 50px;
+        text-align: left;
+
+        ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+
+            li {
+                flex: 1;
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                letter-spacing: -.01em;
+
+                span {
+                    font-size: 12px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .view {
+        display: inline-block;
+        font-size: 20px;
+        color: $main;
+        text-decoration: none;
+        margin: 50px;
     }
 }

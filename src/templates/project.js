@@ -2,45 +2,63 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import Slide from '../components/homepageSlider/SlideLayout/SlideLayout'
+import ProgressBar from '../components/progressBar/progressBar'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import * as styles from './projects.module.scss'
 
 export default ({ data }) => {
-	// const project = data.contentfulProjects
+	const project = data.contentfulProjects
   	return (
-		<Layout>
+		<Layout hasScroll>
+			<ProgressBar />
+
 			<Slide 
-				title="Some cool quote goes here"
-				subTitle="Small title"
+				title={project.title}
+				subTitle={project.projectType}
 				linkText="View Project"
-				link="/project/british-horseracing-authority"
-				project />
+				link={`/project/${project.slug}`}
+				project 
+				background={project.featuredImage.file.url}
+				/>
+				<article className={styles.articleWrapper}>
+					<div className={styles.projectMeta}>
+						<ul>
+							<li>
+								<span>Work for</span>
+								{project.workFor}
+							</li>
 
-			<article className={styles.articleWrapper}>
-				<div className={styles.content}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</div>
+							<li>
+								<span>Client</span>
+								{project.company}
+							</li>
 
-				<div className={styles.content}>
-					<img src="https://placeimg.com/1000/600/tech" alt="" />
-				</div>
+							<li>
+								<span>Role</span>
+								{project.role}
+							</li>
 
-				<div className={styles.content}>
-					<img src="https://placeimg.com/1000/600/tech" alt="" />
-				</div>
+							<li>
+								<span>Year</span>
+								{project.year}
+							</li>
+						</ul>
+					</div>
 
-				<div className={styles.content}>
-					<img src="https://placeimg.com/1000/600/tech" alt="" />
-				</div>
+					<div className={styles.content}>
+						{documentToReactComponents(project.description.json)}
+					</div>
 
-				<div className={styles.content}>
-					<img src="https://placeimg.com/1000/600/tech" alt="" />
-				</div>
+					{project.imageGallery.map((img, i) => 
+						<div key={i} className={styles.content}>
+							<img src={img.file.url} alt={img.file.fileName} />
+						</div>
+					)}
 
-				<div className={styles.content}>
-					<img src="https://placeimg.com/1000/600/tech" alt="" />
-				</div>
-			</article>
+					<a className={styles.view} href={project.url}>View Project</a>
+
+				</article>
 		</Layout>
   	)
 }
@@ -48,8 +66,27 @@ export default ({ data }) => {
 export const query = graphql`
   	query($slug: String!) {
     	contentfulProjects(slug: { eq: $slug } ) {
-			  title
-			  company
+			title
+			projectType
+			company
+			workFor
+			role
+			year
+			description {
+				json
+			}
+			imageGallery {
+				file {
+					url
+					fileName
+				}
+			}
+			featuredImage {
+				file {
+					url
+				}
+			}
+			url
 		}
   	}
 `

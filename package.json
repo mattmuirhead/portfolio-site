@@ -13,6 +13,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.1.0",
+    "@contentful/rich-text-react-renderer": "^13.2.0",
     "dotenv": "^7.0.0",
     "gatsby": "^2.3.16",
     "gatsby-plugin-sass": "^2.0.11",

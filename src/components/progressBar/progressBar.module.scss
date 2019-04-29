@@ -1,0 +1,14 @@
+@import '../../globals';
+
+.progressBar {
+    position: fixed;
+    top: 107px;
+    left: 0;
+    height: 4px;
+    background-color: $main;
+    z-index: 5;
+
+    @include break('tablet-l') {
+        top: 151px;
+    }
+}
