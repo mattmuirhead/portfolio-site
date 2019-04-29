@@ -52,11 +52,24 @@ const Project = ({ data }) => {
 						{documentToReactComponents(project.description.json)}
 					</div>
 					
-					<div className={`${styles.content} ${styles.video}`}>
-						<video autoPlay loop>
-							<source src={project.videoUrl} type="video/mp4" />
-						</video>
-					</div>
+					{project.embedUrl &&
+						<div className={`${styles.content} ${styles.iframe}`}>
+							<iframe 
+								src={project.embedUrl} 
+								title="Embed" 
+								frameborder="0" 
+								allow="autoplay; fullscreen" 
+								allowfullscreen />
+						</div>
+					}
+
+					{project.videoUrl &&
+						<div className={`${styles.content} ${styles.video}`}>
+							<video autoPlay loop>
+								<source src={project.videoUrl} type="video/mp4" />
+							</video>
+						</div>
+					}
 
 					{project.imageGallery.map((img, i) => 
 						<div key={i} className={styles.content}>
@@ -68,11 +81,13 @@ const Project = ({ data }) => {
 						</div>
 					)}
 
-					<a  className={styles.view} 
-						href={project.url}
-						target="blank">
-						View Project
-					</a>
+					{project.url !== null &&
+						<a className={styles.view} 
+							href={project.url}
+							target="blank">
+							View Project
+						</a>
+					}
 
 				</article>
 		</Layout>
@@ -91,6 +106,7 @@ export const query = graphql`
 			description {
 				json
 			}
+			embedUrl
 			videoUrl
 			imageGallery {
 				file {
