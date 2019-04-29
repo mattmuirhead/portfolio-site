@@ -1,4 +1,5 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import Flickity from 'react-flickity-component';
 import Swipe from 'react-easy-swipe';
 import Slide from './SlideLayout/SlideLayout';
@@ -19,12 +20,10 @@ export default class Slider extends React.Component {
     };
 
     onSwipeLeft() {
-        console.log('swipe left');
         this.flkty.next();
     }
 
     onSwipeRight() {
-        console.log('swipe right');
         this.flkty.previous();
     }
     
@@ -36,40 +35,56 @@ export default class Slider extends React.Component {
         }
 
         return (
-            <Debounce time="100" handler="onWheel">
-                <Swipe 
-                    className={styles.slider}
-                    onWheel={this.handleScroll.bind(this)}
-                    onSwipeLeft={this.onSwipeLeft.bind(this)}
-                    onSwipeRight={this.onSwipeRight.bind(this)}
-                    >
-                    <Flickity 
-                        flickityRef={c => this.flkty = c}
-                        className={styles.flickity}
-                        elementType={'div'}
-                        options={flickityOptions}
-                        reloadOnUpdate
-                        >
-                        <Slide 
-                            title="Some cool quote goes here"
-                            subTitle="Small title"
-                            linkText="View Project"
-                            link="/project/british-horseracing-authority" />
-
-                        <Slide 
-                            title="British Horseracing Authority"
-                            subTitle="Wordpress Build"
-                            linkText="View Project"
-                            link="/project/british-horseracing-authority" />
-                        
-                        <Slide 
-                            title="My Amazon Jobs"
-                            subTitle="Craft CMS Build"
-                            linkText="View Project"
-                            link="/project/british-horseracing-authority" />
-                    </Flickity>
-                </Swipe>
-            </Debounce>
+            <StaticQuery
+                query={
+                    graphql`
+                        query SliderQuery {
+                            allContentfulProjects {
+                                edges {
+                                    node {
+                                        title
+                                        projectType
+                                        slug
+                                        featuredImage {
+                                            file {
+                                                url
+                                            }
+                                        }
+                                    }
+                                }
+                            }      
+                        }
+                    `
+                }
+                render={data => (
+                    <Debounce time="100" handler="onWheel">
+                        <Swipe 
+                            className={styles.slider}
+                            onWheel={this.handleScroll.bind(this)}
+                            onSwipeLeft={this.onSwipeLeft.bind(this)}
+                            onSwipeRight={this.onSwipeRight.bind(this)}
+                            >
+                            <Flickity 
+                                flickityRef={c => this.flkty = c}
+                                className={styles.flickity}
+                                elementType={'div'}
+                                options={flickityOptions}
+                                reloadOnUpdate
+                                >
+                                {data.allContentfulProjects.edges.map((project, i) => 
+                                    <Slide
+                                        key={i}
+                                        title={project.node.title}
+                                        subTitle={project.node.projectType}
+                                        linkText="View Project"
+                                        link={`/project/${project.node.slug}`}
+                                        background={project.node.featuredImage.file.url} />    
+                                )}
+                            </Flickity>
+                        </Swipe>
+                    </Debounce>
+                )}
+            />
         );
     }
 }

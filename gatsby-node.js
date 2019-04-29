@@ -8,9 +8,9 @@ exports.createPages = ({ graphql, actions }) => {
         {
             allContentfulProjects {
                 edges {
-                      node {
+                    node {
                         slug
-                      }
+                    }
                 }
             }
         }

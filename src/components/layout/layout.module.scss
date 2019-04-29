@@ -1,41 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300|Material+Icons');
 @import '../../globals';
 
-html, 
-body {
-	height: 100%;
-	overflow: hidden;
+* {
+	box-sizing: border-box;
+	
+	&::selection {
+		background: $main;
+		color: $alt;
+	}
+
+	&::-webkit-scrollbar { 
+		display: none; 
+	}
 }
 
+html,
 body {
-  	min-height: 100vh;
-  	margin: 0;
-
+	margin: 0;
+	
   	@media (hover: hover) {
     	cursor: none;
   	}
-  
-  	* {
-		box-sizing: border-box;
-		
-		&::selection {
-			background: $main;
-			color: $alt;
-		}
-
-		&::-webkit-scrollbar { 
-			display: none; 
-		}
-    }
 }
 
 .siteContainer {
-	position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
     width: 100%;
     padding: 110px 0 0;
     font-family: 'Open Sans', sans-serif;

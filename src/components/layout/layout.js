@@ -6,7 +6,7 @@ import Scroller from './scroller/scroller'
 import * as styles from './layout.module.scss'
 
 export default ({ children, hasScroll }) => (
-    <div className={styles.siteContainer}>
+    <div id="siteContainer" className={styles.siteContainer}>
         <Header />
 
         {children}
