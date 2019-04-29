@@ -31,7 +31,8 @@
             content: '';
             width: 50px;
             height: 2px;
-            background-color: black;
+            background: $grad1;
+            background: linear-gradient(45deg, $grad2, $grad1);
             display: block;
             transform: translateX(0);
             animation: scroll 8s cubic-bezier(0.43, 0.15, 0, 0.99) infinite forwards;

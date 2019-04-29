@@ -27,13 +27,24 @@
     .type {
         font-size: 14px;
         align-self: center;
-        border-left: 1px solid;
         margin-left: 20px;
         padding: 1px 0 1px 15px;
         color: $main;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         letter-spacing: 1.2px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: $main;
+            transition: all ease-in-out .3s;
+        }
     }
 
     .masks {
@@ -73,6 +84,12 @@
     }
 
     &:hover {
+        .type:before {
+            transition: all ease-in-out .3s;
+            background: $grad1;
+            background: linear-gradient(45deg, $grad2, $grad1);
+        }
+
         svg {
             .path {
                 stroke-dasharray: 1000;

@@ -56,7 +56,11 @@ export default ({ data }) => {
 						</div>
 					)}
 
-					<a className={styles.view} href={project.url}>View Project</a>
+					<a  className={styles.view} 
+						href={project.url}
+						target="blank">
+						View Project
+					</a>
 
 				</article>
 		</Layout>
