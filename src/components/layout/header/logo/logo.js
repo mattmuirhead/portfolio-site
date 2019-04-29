@@ -9,7 +9,7 @@ export default class Logo extends React.Component {
             <Link 
                 to="/"
                 className={`${styles.logoWrapper} ${this.props.menu && styles.alt} link`}>
-                <div className={styles.logo}>
+                <div className={`${styles.logo} ${this.props.large && styles.large}`}>
                     <svg viewBox="0 0 257 307">
                         <g>
                             <path className={styles.path} d=" M 32 273 L 32 165 L 127 237 L 222 165 L 222 59 L 127 134 L 32 59 L 32 165" fill="none" strokeWidth="50" strokeLinejoin="miter" strokeLinecap="square" strokeMiterlimit="3"/>
@@ -19,9 +19,11 @@ export default class Logo extends React.Component {
                         </g>
                     </svg>
                 </div>
-                <h1 className={styles.type}>
-                    Front End Developer
-                </h1>
+                {this.props.hasType &&
+                    <h1 className={styles.type}>
+                        Front End Developer
+                    </h1>
+                }
             </Link>
         );
     }

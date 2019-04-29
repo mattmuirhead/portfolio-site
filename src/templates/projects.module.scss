@@ -33,21 +33,35 @@
             border: 2px solid $main;
         }
 
-        video {
-            width: 100%;
+        &.video {
+            display: none;
+
+            @include break('tablet-l') {
+                display: block;
+            }
+            
+            video {
+                width: 100%;
+            }
         }
+
     }
 
     .projectMeta {
-        margin-bottom: 50px;
         text-align: left;
-
+        
         ul {
             width: 100%;
             list-style: none;
             display: flex;
-            margin: 0;
+            margin: 0 0 20px;
             padding: 0;
+            flex-direction: column;
+
+            @include break('tablet-l') {
+                flex-direction: row;
+                margin: 0 0 50px;
+            }
 
             li {
                 flex: 1;
@@ -55,6 +69,11 @@
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
                 letter-spacing: -.01em;
+                margin-bottom: 15px;
+
+                @include break('tablet-l') {
+                    margin-bottom: 0;
+                }
 
                 span {
                     font-size: 12px;

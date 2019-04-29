@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300|Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300');
+@import url('http://weloveiconfonts.com/api/?family=entypo');
 @import '../../globals';
 
 * {
@@ -21,6 +22,10 @@ body {
   	@media (hover: hover) {
     	cursor: none;
   	}
+}
+
+[class*="entypo-"]:before {
+	font-family: 'entypo', sans-serif;
 }
 
 .siteContainer {

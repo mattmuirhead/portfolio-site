@@ -10,7 +10,7 @@ import * as styles from './projects.module.scss'
 export default ({ data }) => {
 	const project = data.contentfulProjects
   	return (
-		<Layout hasScroll>
+		<Layout hasScroll hasFooter>
 			<ProgressBar />
 
 			<Slide 
@@ -25,13 +25,13 @@ export default ({ data }) => {
 					<div className={styles.projectMeta}>
 						<ul>
 							<li>
-								<span>Work for</span>
-								{project.workFor}
+								<span>Client</span>
+								{project.company}
 							</li>
 
 							<li>
-								<span>Client</span>
-								{project.company}
+								<span>Work for</span>
+								{project.workFor}
 							</li>
 
 							<li>
@@ -51,7 +51,7 @@ export default ({ data }) => {
 						{documentToReactComponents(project.description.json)}
 					</div>
 					
-					<div className={styles.content}>
+					<div className={`${styles.content} ${styles.video}`}>
 						<video autoPlay loop>
 							<source src={project.videoUrl} type="video/mp4" />
 						</video>

@@ -27,7 +27,7 @@ export default class Header extends React.Component {
             <div>
                 <div className={styles.headerWrapper}>
                     <div>
-                        <Logo/>
+                        <Logo hasType/>
                     </div>
                     <div>
                         <Menu menu={this.state.menu} />
