@@ -46,8 +46,15 @@ export default ({ data }) => {
 						</ul>
 					</div>
 
+
 					<div className={styles.content}>
 						{documentToReactComponents(project.description.json)}
+					</div>
+					
+					<div className={styles.content}>
+						<video autoPlay loop>
+							<source src={project.videoUrl} type="video/mp4" />
+						</video>
 					</div>
 
 					{project.imageGallery.map((img, i) => 
@@ -79,6 +86,7 @@ export const query = graphql`
 			description {
 				json
 			}
+			videoUrl
 			imageGallery {
 				file {
 					url
