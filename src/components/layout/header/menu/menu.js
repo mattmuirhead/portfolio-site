@@ -10,17 +10,22 @@ export default class Menu extends React.Component {
             
                 <ul className={styles.menu}>
                     <li>
-                        <Link className="link">Projects</Link>
+                        <Link to="/" className="link">Projects</Link>
                         <span className={styles.echo}>Projects</span>
                         <span className={styles.number}>01</span>
                     </li>
                     <li>
-                        <Link className="link">About</Link>
+                        <Link to="/about" className="link">About</Link>
                         <span className={styles.echo}>About</span>
                         <span className={styles.number}>02</span>
                     </li>
                     <li>
-                        <Link className="link">Contact</Link>
+                        <a 
+                            href="mailto:matt.rob.muirhead@googlemail.com" 
+                            target="blank" 
+                            className="link">
+                            Contact
+                        </a>
                         <span className={styles.echo}>Contact</span>
                         <span className={styles.number}>03</span>
                     </li>
