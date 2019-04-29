@@ -4,10 +4,11 @@ import Layout from '../components/layout/layout'
 import Slide from '../components/homepageSlider/SlideLayout/SlideLayout'
 import ProgressBar from '../components/progressBar/progressBar'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
 import * as styles from './projects.module.scss'
 
-export default ({ data }) => {
+const Project = ({ data }) => {
 	const project = data.contentfulProjects
   	return (
 		<Layout hasScroll hasFooter>
@@ -59,7 +60,11 @@ export default ({ data }) => {
 
 					{project.imageGallery.map((img, i) => 
 						<div key={i} className={styles.content}>
-							<img src={img.file.url} alt={img.file.fileName} />
+							<LazyLoadImage 
+								src={img.file.url} 
+								alt={img.file.fileName} 
+								effect="opacity"
+								/>
 						</div>
 					)}
 
@@ -102,3 +107,5 @@ export const query = graphql`
 		}
   	}
 `
+
+export default trackWindowScroll(Project);
