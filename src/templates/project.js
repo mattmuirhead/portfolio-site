@@ -57,9 +57,9 @@ const Project = ({ data }) => {
 							<iframe 
 								src={project.embedUrl} 
 								title="Embed" 
-								frameborder="0" 
+								frameBorder="0" 
 								allow="autoplay; fullscreen" 
-								allowfullscreen />
+								allowFullScreen />
 						</div>
 					}
 
