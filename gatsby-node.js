@@ -6,6 +6,13 @@ exports.createPages = ({ graphql, actions }) => {
 
     return graphql(`
         {
+            allContentfulAboutPage {
+                edges {
+                    node {
+                        slug
+                    }
+                }
+            }
             allContentfulProjects {
                 edges {
                     node {
@@ -15,10 +22,19 @@ exports.createPages = ({ graphql, actions }) => {
             }
         }
     `).then(result => {
+        result.data.allContentfulAboutPage.edges.forEach(({ node }) => {
+            createPage({
+                path: node.slug,
+                component: path.resolve(`./src/templates/about/about.js`),
+                context: {
+                    slug: node.slug,
+                },
+            })
+        })
         result.data.allContentfulProjects.edges.forEach(({ node }) => {
             createPage({
                 path: '/project/' + node.slug,
-                component: path.resolve(`./src/templates/project.js`),
+                component: path.resolve(`./src/templates/project/project.js`),
                 context: {
                     slug: node.slug,
                 },

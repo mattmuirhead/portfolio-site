@@ -39,6 +39,15 @@ export default class Slider extends React.Component {
                 query={
                     graphql`
                         query SliderQuery {
+                            allContentfulAboutPage {
+                                edges {
+                                    node {
+                                        title
+                                        slug
+                                        subTitle
+                                    }
+                                }
+                            } 
                             allContentfulProjects {
                                 edges {
                                     node {
@@ -64,14 +73,14 @@ export default class Slider extends React.Component {
                             onSwipeLeft={this.next.bind(this)}
                             onSwipeRight={this.previous.bind(this)}
                             >
-                            <div className={styles.slideControls}>
+                            {/* <div className={styles.slideControls}>
                                 <div className="link" onClick={this.previous.bind(this)}>
                                     <span className="entypo-left-open-mini"></span>
                                 </div>
                                 <div className="link" onClick={this.next.bind(this)}>
                                     <span className="entypo-right-open-mini"></span>
                                 </div>
-                            </div>
+                            </div> */}
                             <Flickity 
                                 flickityRef={c => this.flkty = c}
                                 className={styles.flickity}
@@ -79,6 +88,14 @@ export default class Slider extends React.Component {
                                 options={flickityOptions}
                                 reloadOnUpdate
                                 >
+                                {data.allContentfulAboutPage.edges.map((about, i) => 
+                                    <Slide
+                                        key={i}
+                                        title={about.node.title}
+                                        subTitle={about.node.subTitle}
+                                        linkText="About Me"
+                                        link={`/${about.node.slug}`} />    
+                                )}
                                 {data.allContentfulProjects.edges.map((project, i) => 
                                     <Slide
                                         key={i}

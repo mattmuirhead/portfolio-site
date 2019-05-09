@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout/layout'
-import Slide from '../components/homepageSlider/SlideLayout/SlideLayout'
-import ProgressBar from '../components/progressBar/progressBar'
+import Layout from '../../components/layout/layout'
+import Slide from '../../components/homepageSlider/SlideLayout/SlideLayout'
+import ProgressBar from '../../components/progressBar/progressBar'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
@@ -19,7 +19,7 @@ const Project = ({ data }) => {
 				subTitle={project.projectType}
 				linkText="View Project"
 				link={`/project/${project.slug}`}
-				project 
+				subPage 
 				background={project.featuredImage.file.url}
 				/>
 				<article className={styles.articleWrapper}>

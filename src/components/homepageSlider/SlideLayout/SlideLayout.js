@@ -9,7 +9,7 @@ export default class Slide extends React.Component {
     render() {
         return (
             <div 
-                className={`${styles.slide} ${this.props.project && styles.projectHeader}`} 
+                className={`${styles.slide} ${this.props.subPage && styles.subPageHeader}`} 
                 style={{backgroundImage: 'url(' + this.props.background + ')'}}>
                 <Tilt 
                     options={
