@@ -10,7 +10,7 @@ export default class Menu extends React.Component {
             
                 <ul className={styles.menu}>
                     <li>
-                        <Link to="/" className="link">Projects</Link>
+                        <Link to="/projects" className="link">Projects</Link>
                         <span className={styles.echo}>Projects</span>
                         <span className={styles.number}>01</span>
                     </li>

@@ -13,6 +13,13 @@ exports.createPages = ({ graphql, actions }) => {
                     }
                 }
             }
+            allContentfulProjectPage {
+                edges {
+                    node {
+                        slug
+                    }
+                }
+            }
             allContentfulProjects {
                 edges {
                     node {
@@ -26,6 +33,15 @@ exports.createPages = ({ graphql, actions }) => {
             createPage({
                 path: node.slug,
                 component: path.resolve(`./src/templates/about/about.js`),
+                context: {
+                    slug: node.slug,
+                },
+            })
+        }),
+        result.data.allContentfulProjectPage.edges.forEach(({ node }) => {
+            createPage({
+                path: node.slug,
+                component: path.resolve(`./src/templates/projects/projects.js`),
                 context: {
                     slug: node.slug,
                 },

@@ -1,0 +1,63 @@
+@import '../../globals';
+
+.projectsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+    .project {
+        width: 100%;
+        padding: 2px 30px 30px 30px;
+        text-decoration: none;
+        
+        @include break('tablet-l') {
+            width: 50%;
+            padding: 2px 30px 60px 60px;
+                    
+            &:nth-of-type(even) {
+                padding: 2px 60px 60px 30px;
+            }
+        }
+
+        .projectInner {
+            border: 2px solid $main;
+            height: 25vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transform-style: preserve-3d;
+            overflow: hidden;
+
+            h4 {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 300;
+                letter-spacing: 1.2px;
+                font-size: 10px;
+                margin: 0;
+                color: $alt;
+                background: rgba($main, .9);
+                padding: 5px 15px;
+                display: inline-block;
+                align-self: flex-start;
+    
+                @include break('tablet-l') {
+                    font-size: 12px;
+                }
+            }
+    
+            h3 {
+                font-size: 30px;
+                margin: 0;
+                color: $alt;
+                background: rgba($main, .9);
+                padding: 0 15px 7px;
+    
+                @include break('tablet-l') {
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
