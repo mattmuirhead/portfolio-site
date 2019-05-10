@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
                     slug: node.slug,
                 },
             })
-        })
+        }),
         result.data.allContentfulProjects.edges.forEach(({ node }) => {
             createPage({
                 path: '/project/' + node.slug,

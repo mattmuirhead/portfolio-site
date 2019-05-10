@@ -67,6 +67,45 @@
             }
         }
 
+        .logoList {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -20px;
+
+            .imgWrapper {
+                width: calc(33.33% - 40px);
+                height: auto;
+                filter: grayscale(1);
+                opacity: .2;
+                align-self: center;
+                margin: 20px 20px;
+                transition: filter ease-in-out .6s, opacity ease-in-out .3s;
+
+                @include break('tablet-l') {
+                    width: calc(20% - 40px);
+                    margin: 40px 20px;
+                }
+
+                &:hover {
+                    filter: grayscale(0);
+                    opacity: 1;
+                    transition: filter ease-in-out .3s .2s, opacity ease-in-out .6s .2s;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border: 0;
+                }
+            }
+
+            &.work { 
+                .imgWrapper {
+                    flex: 1;
+                }
+            }
+        }
+
     }
 
     .projectMeta {
@@ -110,7 +149,7 @@
         font-size: 20px;
         color: $main;
         text-decoration: none;
-        margin: 50px 0;
+        margin: 50px 90px;
         position: relative;
 
         &:after {

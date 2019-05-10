@@ -82,7 +82,7 @@ const Project = ({ data }) => {
 					)}
 
 					{project.url !== null &&
-						<a className={styles.view} 
+						<a className={`${styles.view} link`} 
 							href={project.url}
 							target="blank">
 							View Project
