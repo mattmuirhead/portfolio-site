@@ -9,6 +9,12 @@ import * as styles from './homepageSlider.module.scss'
 
 export default class Slider extends React.Component {
 
+    componentDidMount = () => {
+        this.flkty.on('change', () => {
+          console.log(`current index is ${this.flkty.selectedIndex}`)
+        })
+    }
+
     handleScroll = (e) => {
         if (e.deltaY < 0) {
             this.flkty.previous();
@@ -32,6 +38,7 @@ export default class Slider extends React.Component {
             draggable: false,
             prevNextButtons: false,
             pageDots: false,
+            fade: true
         }
 
         return (

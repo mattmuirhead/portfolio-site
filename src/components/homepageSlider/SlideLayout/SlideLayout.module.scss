@@ -1,13 +1,30 @@
 @import '../../../globals';
 
+
 .slide {
     width: 100%;
     min-height: calc(100vh - 110px);
     position: relative;
     overflow: hidden;
-    background-position: center;
-    background-size: cover;
     display: flex;
+
+    .backgroundOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        .backgroundImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-position: center;
+            background-size: cover;
+        }
+    }
 
     .tilt {
         display: flex;
@@ -76,6 +93,7 @@
                 margin-top: 10px;
             }
         }
+
     }
 
     &.subPageHeader {
@@ -90,7 +108,56 @@
         }
 
         a {
-            animation: opacity .1s ease-in-out forwards;
+            animation: opacityOut .1s ease-in-out forwards;
+        }
+    }
+
+    &:global(.is-selected) {
+        h3, h2, a {
+            opacity: 0;
+            animation: opacityIn .1s 1s cubic-bezier(.63,.03,.21,1) forwards;
+        }
+
+        .backgroundOverlay{
+            .backgroundImage {
+                opacity: 0;
+                animation: opacityIn .1s 1s cubic-bezier(.63,.03,.21,1) forwards;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 100%;
+                background: $grad2;
+                animation: bgOverlayIn 1.5s .25s cubic-bezier(.63,.03,.21,1) forwards;
+            }
+        }
+
+        .overlay {
+            position: relative;
+            display: table;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 100%;
+                bottom: 0;
+                left: 0;
+                background: $grad1;
+                animation: overlayIn 1.5s .25s cubic-bezier(.63,.03,.21,1) forwards;
+            }
+            
+            &.overlayLink {
+                float: right;
+
+                &:after {
+                    top: 10px;
+                }
+            }
         }
     }
 
@@ -102,7 +169,25 @@
         to { min-height: 0px; }
     }
 
-    @keyframes opacity {
+    @keyframes opacityOut {
         to { opacity: 0; }
+    }
+
+    @keyframes opacityIn {
+        to { opacity: 1; }
+    }
+
+    @keyframes overlayIn {
+        0% { right: 100%; }
+        46% { right: 0; left: 0; }
+        54% { right: 0; left: 0; }
+        100% { right: 0; left: 100%; }
+    }
+
+    @keyframes bgOverlayIn {
+        0% { left: 100%; }
+        46% { left: 0; right: 0; }
+        54% { left: 0; right: 0; }
+        100% { left: 0; right: 100%; }
     }
 }

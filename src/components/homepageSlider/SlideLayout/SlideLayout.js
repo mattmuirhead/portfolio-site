@@ -8,9 +8,12 @@ export default class Slide extends React.Component {
     
     render() {
         return (
-            <div 
-                className={`${styles.slide} ${this.props.subPage && styles.subPageHeader}`} 
-                style={{backgroundImage: 'url(' + this.props.background + ')'}}>
+            <div className={`${styles.slide} ${this.props.subPage && styles.subPageHeader}`}>
+                <div className={styles.backgroundOverlay}>
+                    <div 
+                        className={styles.backgroundImage} 
+                        style={{backgroundImage: 'url(' + this.props.background + ')'}}/>
+                </div>
                 <Tilt 
                     options={
                         {
@@ -21,9 +24,15 @@ export default class Slide extends React.Component {
                     } 
                     className={styles.tilt}>
                     <div className={styles.slideInner}>
-                        <h3>{this.props.subTitle}</h3>
-                        <h2>{this.props.title}</h2>
-                        <Link className="link" to={this.props.link}>{this.props.linkText}</Link>
+                        <div className={styles.overlay}>
+                            <h3>{this.props.subTitle}</h3>
+                        </div>
+                        <div className={styles.overlay}>
+                            <h2>{this.props.title}</h2>
+                        </div>
+                        <div className={`${styles.overlay} ${styles.overlayLink}`}>
+                            <Link className="link" to={this.props.link}>{this.props.linkText}</Link>
+                        </div>
                     </div>
                 </Tilt>
             </div>
