@@ -25,7 +25,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div>
-                <div className={styles.headerWrapper}>
+                <div className={`${styles.headerWrapper} ${this.props.isHome && styles.homeHeader}`}>
                     <div>
                         <Logo hasType/>
                     </div>

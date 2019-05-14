@@ -15,4 +15,14 @@
     @include break('tablet-l') {
         padding: 46px 60px;
     }
+
+    &.homeHeader {
+        transform: translateY(-20px);
+        opacity: 0;
+        animation: fadeDown .6s 3.2s cubic-bezier(.63,.03,.21,1) forwards;
+    }
+
+    @keyframes fadeDown {
+        100% { transform: translateY(0); opacity: 1; }
+    }
 }

@@ -1,0 +1,76 @@
+@import '../../globals';
+
+.homeLoaderBackground {
+    background: $alt;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    pointer-events: none;
+    animation: opacityOut .1s 2s linear forwards;
+}
+
+.homeLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    background: $grad1;
+    animation: loadBg 3.5s cubic-bezier(.63,.03,.21,1) forwards; 
+    z-index: 10;
+    overflow: hidden;
+
+    .homeLoaderLogo {
+        position: absolute;
+        z-index: 11;
+        width: 100%;
+        max-width: 150px;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        animation: opacityOut .4s 2.9s linear forwards;
+
+        .masks {
+            stroke: $grad1;
+        }
+    
+        .path,
+        .line {
+            stroke: $alt;
+        }
+
+        .path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 1.2s 1s linear forwards;
+        }
+
+        .line {
+            opacity: 0;
+            animation: opacityIn .3s 2s linear forwards;
+        }
+    }
+
+    @keyframes loadBg {
+        0% { bottom: 100%; }
+        20% { bottom: 0; top: 0; }
+        80% { bottom: 0; top: 0; }
+        100% { bottom: 0; top: 100% }
+    }
+
+    @keyframes opacityIn {
+        100% { opacity: 1; }
+    }
+    
+    @keyframes opacityOut {
+        100% { opacity: 0; }
+    }
+
+    @keyframes dash {
+        0% { stroke-dashoffset: 1000; }
+        100% { stroke-dashoffset: 0; }
+    }
+}

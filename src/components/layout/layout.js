@@ -6,9 +6,9 @@ import Footer from './footer/footer'
 
 import * as styles from './layout.module.scss'
 
-export default ({ children, hasScroll, hasFooter }) => (
+export default ({ children, hasScroll, hasFooter, isHome }) => (
     <div id="siteContainer" className={styles.siteContainer}>
-        <Header />
+        <Header isHome={isHome} />
 
         {children}
 
