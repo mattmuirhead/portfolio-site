@@ -6,7 +6,7 @@
     right: 0;
     height: 100vh;
     width: 100vw;
-    max-width: 1600px;
+    max-width: 900px;
     background: $grad1;
     background: linear-gradient(45deg, $grad2, $grad1);
     color: $alt;
@@ -16,7 +16,6 @@
     justify-content: flex-end;
     align-items: center;
     padding: 0 35px;
-    overflow: hidden;
 
     @include break('tablet-l') {
         padding: 0 65px;
@@ -56,7 +55,7 @@
             }
 
             .echo {
-                color: darken($alt, 15%);
+                color: $grad2;
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -104,7 +103,7 @@
         transition: all .75s cubic-bezier(.63,.03,.21,1);
 
         @include break('tablet-l') {
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
         }
     }
 }
