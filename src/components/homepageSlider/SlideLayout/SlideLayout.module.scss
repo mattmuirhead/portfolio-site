@@ -161,18 +161,18 @@
             }
         }
 
-        &:first-of-type {
-            h3, h2, a {
-                animation-delay: 4.2s;
-            }
+        // &:first-of-type {
+        //     h3, h2, a {
+        //         animation-delay: 4.2s;
+        //     }
 
-            .overlay,
-            .backgroundOverlay {
-                &:after {
-                    animation-delay: 3.45s;
-                }
-            }
-        }
+        //     .overlay,
+        //     .backgroundOverlay {
+        //         &:after {
+        //             animation-delay: 3.45s;
+        //         }
+        //     }
+        // }
     }
 
     @keyframes collapse {
