@@ -49,10 +49,18 @@ export default class Slider extends React.Component {
                                     }
                                 }
                             } 
-                            allContentfulProjects {
-                                edges {
+                            allContentfulProjects(
+                                filter: { 
+                                    homepageOrder: { lt: 6 } 
+                                }, 
+                                sort: {
+                                    fields: [homepageOrder],
+                                    order: ASC
+                                }) {
+                                    edges {
                                     node {
                                         title
+                                        homepageOrder
                                         projectType
                                         slug
                                         featuredImage {
