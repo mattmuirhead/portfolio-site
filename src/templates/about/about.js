@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import Scroller from '../../components/layout/scroller/scroller'
 import Footer from '../../components/layout/footer/footer'
 import Slide from '../../components/homepageSlider/SlideLayout/SlideLayout'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -85,6 +86,8 @@ const About = ({ data }) => {
 					Contact
 				</a>
 			</article>
+			
+			<Scroller />
 			<Footer />
 		</div>
   	)
