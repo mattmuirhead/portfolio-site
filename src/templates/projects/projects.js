@@ -1,14 +1,14 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Tilt from 'react-tilt'
-import Layout from '../../components/layout/layout'
+import Footer from '../../components/layout/footer/footer'
 
 import * as styles from './projects.module.scss'
 
 const Projects = ({ data }) => {
 	const projects = data.contentfulProjectPage
   	return (
-		<Layout hasScroll hasFooter>
+		<div>
 			<div className={styles.projectsWrapper}>
 				{projects.projects.map((project, i) => 
 					<Link key={i} 
@@ -30,7 +30,8 @@ const Projects = ({ data }) => {
 					</Link>
 				)}
 			</div>
-		</Layout>
+			<Footer />
+		</div>
   	)
 }
 

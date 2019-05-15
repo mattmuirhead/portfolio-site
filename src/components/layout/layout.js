@@ -2,18 +2,18 @@ import React from 'react'
 import Header from './header/header'
 import Cursor from './cursor/cursor'
 import Scroller from './scroller/scroller'
-import Footer from './footer/footer'
+import HomeLoader from '../homeLoader/homeLoader'
 
 import * as styles from './layout.module.scss'
 
-export default ({ children, hasScroll, hasFooter, isHome }) => (
+export default ({ children }) => (
     <div id="siteContainer" className={styles.siteContainer}>
-        <Header isHome={isHome} />
+        <Header />
+        <HomeLoader />
 
         {children}
 
-        {hasScroll && <Scroller />}
-        {hasFooter && <Footer />}
+        <Scroller />
         <Cursor />
     </div>
 )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../../components/layout/layout'
+import Footer from '../../components/layout/footer/footer'
 import Slide from '../../components/homepageSlider/SlideLayout/SlideLayout'
 import ProgressBar from '../../components/progressBar/progressBar'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -11,7 +11,7 @@ import * as styles from '../project/projects.module.scss'
 const About = ({ data }) => {
 	const about = data.contentfulAboutPage
   	return (
-		<Layout hasScroll hasFooter>
+		<div>
 			<ProgressBar />
 
 			<Slide 
@@ -89,7 +89,8 @@ const About = ({ data }) => {
 					Contact
 				</a>
 			</article>
-		</Layout>
+			<Footer />
+		</div>
   	)
 }
 

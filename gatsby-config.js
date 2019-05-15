@@ -15,5 +15,11 @@ module.exports = {
 			  	accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN
 			},
 		},
+		{
+			resolve: `gatsby-plugin-layout`,
+            options: {
+                component: require.resolve(`./src/components/layout/layout.js`)
+            }
+		}
 	],
   }
