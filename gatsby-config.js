@@ -1,13 +1,10 @@
 require(`dotenv`).config({path: `.env`,})
 
 module.exports = {
-	siteMetadata: {
-	  	name: `digital`,
-	  	tagline: `Gatsby + SASS + Typescript = 💪`
-	},  
 	plugins: [
-	  	`gatsby-plugin-sass`,
+		`gatsby-plugin-sass`,
 		`gatsby-plugin-typescript`,	
+		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {

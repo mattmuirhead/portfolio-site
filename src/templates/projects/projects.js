@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { Helmet } from 'react-helmet'
 import Tilt from 'react-tilt'
 import Footer from '../../components/layout/footer/footer'
 
@@ -9,6 +10,12 @@ const Projects = ({ data }) => {
 	const projects = data.contentfulProjectPage
   	return (
 		<div>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>Projects - Matt Muirhead | Front End Developer</title>
+				<meta name="description" content="Matt Muirhead Front End UI Developer based in London and Surrey, United Kingdom" />
+				<link rel="canonical" href="http://mattmuirhead.co.uk/projects" />
+			</Helmet>
 			<div className={styles.projectsWrapper}>
 				{projects.projects.map((project, i) => 
 					<Link key={i} 
