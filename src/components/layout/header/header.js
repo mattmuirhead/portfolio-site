@@ -30,7 +30,7 @@ export default class Header extends React.Component {
                         <Logo hasType/>
                     </div>
                     <div>
-                        <Menu menu={this.state.menu} />
+                        <Menu handleClick={this.handleClick.bind(this)} menu={this.state.menu} />
                         <MenuBtn handleClick={this.handleClick.bind(this)}  menu={this.state.menu} />
                     </div>
                 </div>

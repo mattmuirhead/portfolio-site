@@ -27,6 +27,7 @@
         list-style: none;
         text-align: right;
         position: relative;
+        transition: all .75s cubic-bezier(.63,.03,.21,1);
 
         li {
             position: relative;
@@ -104,6 +105,60 @@
 
         @include break('tablet-l') {
             clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
+        }
+    }
+
+    &.menuExit {
+        z-index: 1;
+        animation: menuExitMobile 1.5s cubic-bezier(.63,.03,.21,1) forwards;
+
+        @include break('tablet-l') {
+            animation: menuExitDesktop 1.5s cubic-bezier(.63,.03,.21,1) forwards;
+        }
+
+        .menu {
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        @keyframes menuExitDesktop {
+            0% {
+                max-width: 900px;
+                clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
+            }
+            40% {
+                max-width: 100vw;
+                clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+            }
+            60% {
+                max-width: 100vw;
+                clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+                transform: translateX(0);
+            }
+            100% {
+                max-width: 100vw;
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes menuExitMobile {
+            0% {
+                max-width: 900px;
+                clip-path: polygon(35% 0, 100% 0, 100% 100%, 5% 100%);
+            }
+            40% {
+                max-width: 100vw;
+                clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+            }
+            60% {
+                max-width: 100vw;
+                clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+                transform: translateX(0);
+            }
+            100% {
+                max-width: 100vw;
+                transform: translateX(-100%);
+            }
         }
     }
 }
