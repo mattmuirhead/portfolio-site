@@ -79,8 +79,7 @@ const About = ({ data }) => {
 				</div>
 
 				<a className={`${styles.view} link`} 
-					href="/projects"
-					target="blank">
+					href="/projects">
 					View Projects
 				</a>
 
