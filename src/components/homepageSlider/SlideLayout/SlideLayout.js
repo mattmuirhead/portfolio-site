@@ -14,7 +14,7 @@ export default class Slide extends React.Component {
                     <iframe 
                         title="playgroundItem" 
                         className={styles.backgroundImage} 
-                        src="file:///Users/matt/Documents/Dev%20Work/Playground/rollercoaster/index.html" />
+                        src="http://playground.mattmuirhead.co.uk/rollercoaster/" />
                 :
                     <div 
                         className={styles.backgroundImage} 
