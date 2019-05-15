@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Footer from '../../components/layout/footer/footer'
 import Slide from '../../components/homepageSlider/SlideLayout/SlideLayout'
 import ProgressBar from '../../components/progressBar/progressBar'
@@ -78,10 +78,10 @@ const About = ({ data }) => {
 					</div>
 				</div>
 
-				<a className={`${styles.view} link`} 
-					href="/projects">
+				<Link className={`${styles.view} link`} 
+					to="/projects">
 					View Projects
-				</a>
+				</Link>
 
 				<a className={`${styles.view} link`} 
 					href="mailto:matt.rob.muirhead@googlemail.com">
