@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Footer from '../../components/layout/footer/footer'
 import Slide from '../../components/homepageSlider/SlideLayout/SlideLayout'
-import ProgressBar from '../../components/progressBar/progressBar'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
@@ -12,8 +11,6 @@ const Project = ({ data }) => {
 	const project = data.contentfulProjects
   	return (
 		<div>
-			<ProgressBar />
-
 			<Slide 
 				title={project.title}
 				subTitle={project.projectType}

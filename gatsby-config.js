@@ -20,6 +20,14 @@ module.exports = {
             options: {
                 component: require.resolve(`./src/components/layout/layout.js`)
             }
-		}
+		},
+		{
+			resolve: 'gatsby-plugin-page-progress',
+			options: {
+			  	matchStartOfPath: ['project', 'about'],
+			  	height: 4,
+			  	prepend: false,
+			}
+		  }
 	],
   }
