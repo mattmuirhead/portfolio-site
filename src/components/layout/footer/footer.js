@@ -13,7 +13,7 @@ export default () => (
             </li>
             <li><Logo large /></li>
             <li>
-                <a href="mailto:matt.rob.muirhead@googlemail.com" className="link">
+                <a href="mailto:hello@mattmuirhead.co.uk" className="link">
                     <span className="entypo-mail"></span>
                 </a>
             </li>

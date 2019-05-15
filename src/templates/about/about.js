@@ -90,7 +90,7 @@ const About = ({ data }) => {
 				</Link>
 
 				<a className={`${styles.view} link`} 
-					href="mailto:matt.rob.muirhead@googlemail.com">
+					href="mailto:hello@mattmuirhead.co.uk">
 					Contact
 				</a>
 			</article>
