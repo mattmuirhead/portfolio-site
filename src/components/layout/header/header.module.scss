@@ -1,0 +1,25 @@
+@import '../../../globals';
+
+.headerWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 6;
+    background-color: $alt;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeDown .6s 3.2s cubic-bezier(.63,.03,.21,1) forwards;
+
+    @include break('tablet-l') {
+        padding: 46px 60px;
+    }
+
+    @keyframes fadeDown {
+        100% { transform: translateY(0); opacity: 1; }
+    }
+}

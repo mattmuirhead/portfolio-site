@@ -1,0 +1,52 @@
+@import '../../../globals';
+
+body:hover {
+    .cursorSmall {
+        width: 5px;
+        height: 5px;
+        left: -2.5px;
+        top: -2.5px;
+        border-radius: 50%;
+        z-index: 11000;
+        background: $main;
+        position: fixed;
+        pointer-events: none;
+        display: none;
+
+        @media (hover: hover) {
+            display: block;
+        }
+
+        &::before {
+            content: '';
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) scale(0);
+            border: 1px solid $main;
+            border-radius: 100%;
+            opacity: .5;
+            animation: scale-in ease-in-out .3s forwards;
+            transition: all ease-in-out .3s;
+        }
+
+        @keyframes scale-in {
+            0%   { transform: translateX(-50%) translateY(-50%) scale(0); }
+            100% { transform: translateX(-50%) translateY(-50%) scale(1); }
+        }
+
+        &.hover {
+            background: $grad1;
+
+            &::before {
+                height: 80px;
+                width: 80px;
+                background-color: $grad2;
+                opacity: .1;
+                transition: all ease-in-out .3s;
+            }
+        }
+    }
+}

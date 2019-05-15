@@ -1,0 +1,60 @@
+@import '../../globals';
+
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 110px;
+    overflow: hidden;
+
+    @include break('tablet-l') {
+        padding-top: 150px;
+    }
+
+    .slideControls {
+        position: absolute;
+        top: 140px;
+        left: 25px;
+        z-index: 5;
+        display: flex;
+
+        @include break('tablet-l') {
+            top: 203px;
+            left: 55px;
+        }
+
+        div {
+            position: relative;
+            color: $alt;
+            background: rgba($main, .9);
+            font-size: 20px;
+            width: 33px;
+            height: 33px;
+            margin: 0 5px;
+            text-align: center;
+            line-height: 31px;
+            cursor: pointer;
+
+            @include break('tablet-l') {
+                margin: 0 5px;
+            }
+
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+    
+    .flickity {
+        overflow: hidden;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+}

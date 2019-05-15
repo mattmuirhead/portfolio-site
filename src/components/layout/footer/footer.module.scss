@@ -1,0 +1,29 @@
+@import '../../../globals';
+
+.footer {
+    text-align: center;
+    padding: 0 0 70px;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        
+        li {
+            align-self: center;
+            font-size: 25px;
+            padding: 0 20px;
+
+            a {
+                text-decoration: none;
+                color: $main;
+                transition: all ease-in-out .3s;
+
+                &:hover {
+                    color: $grad1;
+                }
+            }
+        }
+    }
+}

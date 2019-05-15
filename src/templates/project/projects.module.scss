@@ -1,0 +1,195 @@
+@import '../../globals';
+
+.articleWrapper {
+    width: 100%;
+    max-width: 1260px;
+    padding: 50px 30px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include break('tablet-l') {
+        padding: 50px 60px;
+    }
+
+    .content {
+        margin-bottom: 50px;
+        text-align: left;
+        text-align: center;
+        color: $main;
+
+        h3 {
+            font-size: 25px;
+            line-height: 1.3;
+            margin: 0 0 20px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+            text-align: left;
+        }
+
+        span {
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 0 auto;
+            border: 2px solid $main;
+        }
+
+        &.iframe {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+        }
+
+        &.video {
+            display: none;
+
+            @include break('tablet-l') {
+                display: block;
+            }
+            
+            video {
+                width: 100%;
+            }
+        }
+
+        .logoList {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -20px;
+
+            .imgWrapper {
+                width: calc(33.33% - 40px);
+                height: auto;
+                filter: grayscale(1);
+                opacity: .2;
+                align-self: center;
+                margin: 20px 20px;
+                transition: filter ease-in-out .6s, opacity ease-in-out .3s;
+
+                @include break('tablet-l') {
+                    width: calc(20% - 40px);
+                    margin: 40px 20px;
+                }
+
+                &:hover {
+                    filter: grayscale(0);
+                    opacity: 1;
+                    transition: filter ease-in-out .3s .2s, opacity ease-in-out .6s .2s;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border: 0;
+                }
+            }
+
+            &.work { 
+                .imgWrapper {
+                    flex: 1;
+                }
+            }
+        }
+
+    }
+
+    .projectMeta {
+        text-align: left;
+        
+        ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            margin: 0 0 20px;
+            padding: 0;
+            flex-direction: column;
+
+            @include break('tablet-l') {
+                flex-direction: row;
+                margin: 0 0 50px;
+            }
+
+            li {
+                flex: 1;
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                letter-spacing: -.01em;
+                margin-bottom: 15px;
+
+                @include break('tablet-l') {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    font-size: 12px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .view {
+        display: inline-block;
+        font-size: 20px;
+        color: $main;
+        text-decoration: none;
+        margin: 50px 90px;
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            margin-top: 5px;
+            background-color: $main;
+            display: block;
+            transform: translateX(0);
+            animation: scroll 8s cubic-bezier(0.43, 0.15, 0, 0.99) infinite forwards;
+            transition: all ease-in-out .3s;
+        }
+
+        &:hover {
+            &:after {
+                background: $grad1;
+                background: linear-gradient(45deg, $grad2, $grad1);
+                transition: all ease-in-out .3s;
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: scale(1);
+                transform-origin: right 50% 0px;
+            }
+            15% {
+                transform: scale(0);
+                transform-origin: right 50% 0px;
+            }
+            18% {
+                transform: scale(0);
+                transform-origin: left 50% 0px;
+            }
+            33% {
+                transform: scale(1);
+                transform-origin: left 50% 0px;
+            }
+        }
+    }
+}

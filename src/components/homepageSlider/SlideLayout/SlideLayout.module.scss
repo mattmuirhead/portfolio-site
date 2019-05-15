@@ -1,0 +1,210 @@
+@import '../../../globals';
+
+
+.slide {
+    width: 100%;
+    min-height: calc(100vh - 110px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background: $grad2;
+
+    .backgroundOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        .backgroundImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .tilt {
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0 150px;
+        transform-style: preserve-3d;
+        width: 100%;
+
+        @include break('tablet-l') {
+            padding: 20vh 0 calc(20vh - 40px);
+        }
+    }
+    
+    .slideInner {
+        max-width: 1200px;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+        transform: translateZ(20px);
+
+        @include break('tablet-l') {
+            padding: 0 60px;
+        }
+
+        h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1.2px;
+            font-size: 12px;
+            margin: 0;
+            color: $alt;
+            background: rgba($main, .9);
+            padding: 5px 25px;
+            display: inline-block;
+
+            @include break('tablet-l') {
+                font-size: 14px;
+            }
+        }
+
+        h2 {
+            font-size: 35px;
+            margin: 0;
+            color: $alt;
+            background: rgba($main, .9);
+            padding: 10px 25px 17px;
+
+            @include break('tablet-l') {
+                font-size: 75px;
+                padding: 0 25px 7px;
+            }
+        }
+
+        a {
+            float: left;
+            font-size: 16px;
+            color: $main;
+            text-decoration: none;
+            color: $alt;
+            background: rgba($main, .9);
+            padding: 5px 25px 10px;
+            
+            @include break('tablet-l') {
+                float: right;
+                font-size: 18px;
+                padding: 5px 25px;
+                margin-top: 10px;
+            }
+        }
+
+    }
+
+    &.subPageHeader {
+        animation: morph .75s ease-in-out forwards;
+
+        .tilt {
+            animation: collapse .75s ease-in-out forwards;
+
+            @include break('tablet-l') {
+                animation: none;
+            }
+        }
+
+        a {
+            animation: opacityOut .1s ease-in-out forwards;
+        }
+    }
+
+    &:global(.is-selected) {
+        h3, h2, a {
+            opacity: 0;
+            animation: opacityIn .1s 1s cubic-bezier(.63,.03,.21,1) forwards;
+        }
+
+        .backgroundOverlay{
+            .backgroundImage {
+                opacity: 0;
+                animation: scale 10s ease-in-out forwards, opacityIn .1s 1s cubic-bezier(.63,.03,.21,1) forwards;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 100%;
+                background: $grad2;
+                animation: bgOverlayIn 1.5s .25s cubic-bezier(.63,.03,.21,1) forwards;
+            }
+        }
+
+        .overlay {
+            position: relative;
+            display: table;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 100%;
+                bottom: 0;
+                left: 0;
+                background: $grad1;
+                animation: overlayIn 1.5s .25s cubic-bezier(.63,.03,.21,1) forwards;
+            }
+            
+            &.overlayLink {
+                float: right;
+
+                &:after {
+                    top: 10px;
+                }
+            }
+        }
+    }
+
+    @keyframes collapse {
+        to { padding: 30px 0 10px; }
+    }
+
+    @keyframes morph {
+        to { min-height: 0px; }
+    }
+
+    @keyframes opacityOut {
+        to { opacity: 0; }
+    }
+
+    @keyframes opacityIn {
+        to { opacity: 1; }
+    }
+
+    @keyframes overlayIn {
+        0% { right: 100%; }
+        46% { right: 0; left: 0; }
+        54% { right: 0; left: 0; }
+        100% { right: 0; left: 100%; }
+    }
+
+    @keyframes scale {
+        to { transform: scale(1.1); }
+    }
+
+    @keyframes bgOverlayIn {
+        0% { left: 0; }
+        46% { left: 0; right: 0; }
+        54% { left: 0; right: 0; }
+        100% { left: 0; right: 100%; }
+    }
+}

@@ -1,0 +1,40 @@
+// Mixins
+$breakpoints: (
+  'tablet-p':  ( min-width:  768px ),
+  'tablet-l': ( min-width:  1024px ),
+  'laptop':  ( min-width: 1200px ),
+  'desktop':  ( min-width: 1600px )
+) !default;
+
+@mixin break($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+//  Variables
+$main: #032635;
+$alt: #ffffff;
+$highlight: red;
+$grad1: #62f1d2;
+$grad2: #51ceb2;
+
+:global(#gatsby-plugin-page-progress) {
+    z-index: 10;
+    top: 107px !important;
+    background: $grad1 !important;
+
+    @include break('tablet-l') {
+        top: 151px !important;
+    }
+}
