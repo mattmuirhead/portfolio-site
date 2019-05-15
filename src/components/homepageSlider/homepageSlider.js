@@ -95,7 +95,8 @@ export default class Slider extends React.Component {
                                         title={about.node.title}
                                         subTitle={about.node.subTitle}
                                         linkText="About Me"
-                                        link={`/${about.node.slug}`} />    
+                                        link={`/${about.node.slug}`}
+                                        homeSlide />    
                                 )}
                                 {data.allContentfulProjects.edges.map((project, i) => 
                                     <Slide

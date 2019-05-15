@@ -10,9 +10,16 @@ export default class Slide extends React.Component {
         return (
             <div className={`${styles.slide} ${this.props.subPage && styles.subPageHeader}`}>
                 <div className={styles.backgroundOverlay}>
+                {this.props.homeSlide ? 
+                    <iframe 
+                        title="playgroundItem" 
+                        className={styles.backgroundImage} 
+                        src="file:///Users/matt/Documents/Dev%20Work/Playground/rollercoaster/index.html" />
+                :
                     <div 
                         className={styles.backgroundImage} 
                         style={{backgroundImage: 'url(' + this.props.background + ')'}}/>
+                }
                 </div>
                 <Tilt 
                     options={
