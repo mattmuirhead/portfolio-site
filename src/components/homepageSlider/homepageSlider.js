@@ -32,7 +32,7 @@ export default class Slider extends React.Component {
             draggable: false,
             prevNextButtons: false,
             pageDots: false,
-            fade: true
+            static: true
         }
 
         return (
