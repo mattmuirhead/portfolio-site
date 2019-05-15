@@ -21,9 +21,8 @@
         display: flex;
 
         @include break('tablet-l') {
-            top: initial;
-            bottom: 173px;
-            left: 40px;
+            top: 203px;
+            left: 55px;
         }
 
         div {

@@ -82,14 +82,14 @@ export default class Slider extends React.Component {
                             onSwipeLeft={this.next.bind(this)}
                             onSwipeRight={this.previous.bind(this)}
                             >
-                            {/* <div className={styles.slideControls}>
+                            <div className={styles.slideControls}>
                                 <div className="link" onClick={this.previous.bind(this)}>
                                     <span className="entypo-left-open-mini"></span>
                                 </div>
                                 <div className="link" onClick={this.next.bind(this)}>
                                     <span className="entypo-right-open-mini"></span>
                                 </div>
-                            </div> */}
+                            </div>
                             <Flickity 
                                 flickityRef={c => this.flkty = c}
                                 className={styles.flickity}
