@@ -17,7 +17,7 @@ const Project = ({ data }) => {
 				<meta charSet="utf-8" />
 				<title>{project.title} - Matt Muirhead | Front End Developer</title>
 				<meta name="description" content="Matt Muirhead Front End UI Developer based in London and Surrey, United Kingdom" />
-				<link rel="canonical" href={`http://mattmuirhead.co.uk/project/${ project.slug }`} />
+				<link rel="canonical" href={`https://mattmuirhead.co.uk/project/${ project.slug }`} />
 			</Helmet>
 
 			<Slide 
@@ -107,6 +107,7 @@ export const query = graphql`
   	query($slug: String!) {
     	contentfulProjects(slug: { eq: $slug } ) {
 			title
+			slug
 			projectType
 			company
 			workFor

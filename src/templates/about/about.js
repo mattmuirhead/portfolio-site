@@ -17,7 +17,7 @@ const About = ({ data }) => {
 				<meta charSet="utf-8" />
 				<title>About - Matt Muirhead | Front End Developer</title>
 				<meta name="description" content="Matt Muirhead Front End UI Developer based in London and Surrey, United Kingdom" />
-				<link rel="canonical" href="http://mattmuirhead.co.uk/about" />
+				<link rel="canonical" href="https://mattmuirhead.co.uk/about" />
 			</Helmet>
 
 			<Slide 
