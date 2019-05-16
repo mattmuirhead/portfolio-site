@@ -14,9 +14,9 @@ module.exports = {
 		},
 		{
 			resolve: `gatsby-plugin-layout`,
-            options: {
-                component: require.resolve(`./src/components/layout/layout.js`)
-            }
+			options: {
+				component: require.resolve(`./src/components/layout/layout.js`)
+			}
 		},
 		{
 			resolve: 'gatsby-plugin-page-progress',
@@ -25,6 +25,12 @@ module.exports = {
 			  	height: 4,
 			  	prepend: false,
 			}
-		  }
+		},
+		{
+			resolve: `gatsby-plugin-google-tagmanager`,
+			options: {
+				id: "GTM-WJCFR9Q",
+			},
+		},
 	],
   }
