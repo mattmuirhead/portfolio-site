@@ -21,7 +21,7 @@ export default class Logo extends React.Component {
                 </div>
                 {this.props.hasType &&
                     <h1 className={styles.type}>
-                        Front End Developer
+                        Front End UI Developer
                     </h1>
                 }
             </Link>
