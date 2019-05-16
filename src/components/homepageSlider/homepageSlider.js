@@ -84,10 +84,10 @@ export default class Slider extends React.Component {
                             >
                             <div className={styles.slideControls}>
                                 <div className="link" onClick={this.previous.bind(this)}>
-                                    <span className="entypo-left-open-mini"></span>
+                                    <i className="fas fa-chevron-left"></i>
                                 </div>
                                 <div className="link" onClick={this.next.bind(this)}>
-                                    <span className="entypo-right-open-mini"></span>
+                                    <i className="fas fa-chevron-right"></i>
                                 </div>
                             </div>
                             <Flickity 

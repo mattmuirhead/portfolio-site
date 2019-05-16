@@ -8,13 +8,13 @@ export default () => (
         <ul>
             <li>
                 <a href="https://www.linkedin.com/in/mattmuirhead/" target="blank" className="link">
-                    <span className="entypo-linkedin"></span>
+                    <i className="fab fa-linkedin-in"></i>
                 </a>
             </li>
             <li><Logo large /></li>
             <li>
                 <a href="mailto:hello@mattmuirhead.co.uk" className="link">
-                    <span className="entypo-mail"></span>
+                    <i className="far fa-envelope"></i>
                 </a>
             </li>
         </ul>
