@@ -26,6 +26,7 @@ const About = ({ data }) => {
 				linkText="About Me"
 				link={`/${about.slug}`}
 				subPage 
+				homeSlide
 				/>
 			
 			<article className={styles.articleWrapper}>
