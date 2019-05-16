@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'entypo';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://lib.arvancloud.com/ar/entypo/2.0/entypo.eot');
+  src: url('https://lib.arvancloud.com/ar/entypo/2.0/entypo.eot?#iefix') format('eot'), 
+  url('https://lib.arvancloud.com/ar/entypo/2.0/entypo.woff') format('woff'), 
+  url('https://lib.arvancloud.com/ar/entypo/2.0/entypo.ttf') format('truetype'), 
+  url('https://lib.arvancloud.com/ar/entypo/2.0/entypo.svg#entypo') format('svg');
+}
+
+:global(.entypo-linkedin:before) {content:"\f318"}
+:global(.entypo-mail:before) {content:"\2709"}
+:global(.entypo-left-open-mini:before) {content:"\e761"}
+:global(.entypo-right-open-mini:before) {content:"\e762"}
