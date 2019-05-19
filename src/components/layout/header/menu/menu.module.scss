@@ -16,6 +16,7 @@
     justify-content: flex-end;
     align-items: center;
     padding: 0 35px;
+    pointer-events: none;
 
     @include break('tablet-l') {
         padding: 0 65px;
@@ -100,6 +101,7 @@
     }
 
     &.open {
+        pointer-events: all;
         clip-path: polygon(35% 0, 100% 0, 100% 100%, 5% 100%);
         transition: all .75s cubic-bezier(.63,.03,.21,1);
 
