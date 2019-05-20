@@ -119,8 +119,7 @@ export default class Slider extends React.Component {
                                 <Slide
                                     title="See more of my work"
                                     linkText="View all projects"
-                                    link="/projects"
-                                    homeSlide />   
+                                    link="/projects" />   
                             </Flickity>
                         </Swipe>
                     </Debounce>
