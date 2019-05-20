@@ -31,9 +31,11 @@ export default class Slide extends React.Component {
                     } 
                     className={styles.tilt}>
                     <div className={styles.slideInner}>
-                        <div className={styles.overlay}>
-                            <h3>{this.props.subTitle}</h3>
-                        </div>
+                        {this.props.subTitle && 
+                            <div className={styles.overlay}>
+                                <h3>{this.props.subTitle}</h3>
+                            </div>
+                        }
                         <div className={styles.overlay}>
                             <h2>{this.props.title}</h2>
                         </div>
