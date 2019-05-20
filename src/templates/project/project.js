@@ -54,9 +54,11 @@ const Project = ({ data }) => {
 					</div>
 
 
-					<div className={styles.content}>
-						{documentToReactComponents(project.description.json)}
-					</div>
+					{project.description &&
+						<div className={styles.content}>
+							{documentToReactComponents(project.description.json)}
+						</div>
+					}
 					
 					{project.embedUrl &&
 						<div className={`${styles.content} ${styles.iframe}`}>
