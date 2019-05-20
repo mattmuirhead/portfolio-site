@@ -115,6 +115,12 @@ export default class Slider extends React.Component {
                                         link={`/project/${project.node.slug}`}
                                         background={project.node.featuredImage.file.url} />    
                                 )}
+
+                                <Slide
+                                    title="See more of my work"
+                                    linkText="View all projects"
+                                    link="/projects"
+                                    homeSlide />   
                             </Flickity>
                         </Swipe>
                     </Debounce>
