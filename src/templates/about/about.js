@@ -85,6 +85,13 @@ const About = ({ data }) => {
 					</div>
 				</div>
 
+
+				<a className={`${styles.view} link`} 
+					href="/matt_muirhead_CV.pdf"
+					target="_blank">
+					View CV
+				</a>
+				
 				<Link className={`${styles.view} link`} 
 					to="/projects">
 					View Projects
